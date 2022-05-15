@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 10vh;
+    background: #a7a8a1;
 }
 
 .wrapper {
@@ -17,6 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2.5vh;
+    overflow: hidden;
 }
 
 input {
@@ -26,7 +28,6 @@ input {
 .memsSlider {
     width: inherit;
     height: 60vh;
-    border: solid 2px rgb(168, 7, 7);
     display: flex;
 }
 
@@ -38,6 +39,7 @@ input {
 img {
     width: inherit;
     height: inherit;
+    border-radius: 5%;
      /* object-fit: scale-down;  */
 }
 
@@ -45,72 +47,98 @@ img {
     width: inherit;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .string {
     display: flex;
     display: inline-block;
-    border: solid 1px rgb(223, 226, 21);
-    height: 1.2rem;
+    height: 1.4rem;
     width: auto;
     overflow: hidden;
+}
+
+.nameMems {
+    font-size: 1.2rem;
 }
 
 
 .control {
     display: flex;
     justify-content: space-between;
-    width: 5rem;
+    width: 7rem;
+    padding: 0.3rem;
 }
 
-.btn {
+ .btn {
+    padding: 1rem 0.2rem;
+    cursor: pointer;
+} 
+
+.button {
     width: 1rem;
     height: 1rem;
     border: solid 2px rgb(56, 22, 207);
     border-radius: 50%;
-    cursor: pointer;
+    padding: 0;
+}
+
+.btn:hover .button {
+    background: #fff;
+}
+
+.btn:active .button {
+    background: #000;
 }
 
 
-#r1:checked ~ .elements > .control label:nth-of-type(1),
-#r2:checked ~ .elements > .control label:nth-of-type(2),
-#r3:checked ~ .elements > .control label:nth-of-type(3),
-#r4:checked ~ .elements > .control label:nth-of-type(4) {
+
+#r1:checked ~ .elements > .control label > button:nth-of-type(1),
+#r2:checked ~ .elements > .control label > button:nth-of-type(2),
+#r3:checked ~ .elements > .control label > button:nth-of-type(3),
+#r4:checked ~ .elements > .control label > button:nth-of-type(4) {
     background: rgb(80, 88, 201);
-    
 }
 
-#r1:checked ~ .elements > .nameMems {
+#r1:checked ~ .elements > .string .nameMems {
     transform: translate(0, 0);
+    transition: all 0.5s linear ;
 }
 
 #r2:checked ~ .elements > .string .nameMems {
     transform: translate(0, -100%);
+    transition: all 0.5s linear ;
 }
 
 #r3:checked ~ .elements > .string .nameMems {
     transform: translate(0, -200%);
+    transition: all 0.5s linear ;
 }
 
 #r4:checked ~ .elements > .string .nameMems {
     transform: translate(0, -300%);
+    transition: all 0.5s linear;
 }
 
 
 
 
-#r1:checked ~ .memsSlider > .slide img {
+#r1:checked ~ .memsSlider > .slide {
     transform: translate(0);
+    transition: all 0.8s linear;
 }
 
-#r2:checked ~ .memsSlider > .slide img {
+#r2:checked ~ .memsSlider > .slide {
     transform: translate(-100%);
+    transition: all 0.8s linear;
 }
 
-#r3:checked ~ .memsSlider > .slide img {
+#r3:checked ~ .memsSlider > .slide {
     transform: translate(-200%);
+    transition: all 0.8s linear;
 }
 
-#r4:checked ~ .memsSlider> .slide img {
+#r4:checked ~ .memsSlider> .slide {
     transform: translate(-300%);
+    transition: all 0.8s linear ;
 }
