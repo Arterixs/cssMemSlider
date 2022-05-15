@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2.5vh;
 }
 
 input {
@@ -26,22 +27,19 @@ input {
     width: inherit;
     height: 60vh;
     border: solid 2px rgb(168, 7, 7);
+    display: flex;
 }
 
-/* .slider {
-    border: solid 1px rgb(158, 50, 50);
-    width: 40vw;
-    height: 60vh;
-    display: flex;
-} */
+.slide {
+    width: inherit;
+    height: inherit;
+}
 
-/* .row {
-    width: 40vw;
-    height: 20vh;
-    border: solid 2px rgb(87, 168, 32);
-    display: flex;
-    justify-content: space-between;
-} */
+img {
+    width: inherit;
+    height: inherit;
+     /* object-fit: scale-down;  */
+}
 
 .elements {
     width: inherit;
@@ -51,10 +49,13 @@ input {
 
 .string {
     display: flex;
+    display: inline-block;
     border: solid 1px rgb(223, 226, 21);
-    width: 3.2rem;
+    height: 1.2rem;
+    width: auto;
     overflow: hidden;
 }
+
 
 .control {
     display: flex;
@@ -70,10 +71,46 @@ input {
     cursor: pointer;
 }
 
+
 #r1:checked ~ .elements > .control label:nth-of-type(1),
 #r2:checked ~ .elements > .control label:nth-of-type(2),
 #r3:checked ~ .elements > .control label:nth-of-type(3),
 #r4:checked ~ .elements > .control label:nth-of-type(4) {
     background: rgb(80, 88, 201);
+    
 }
 
+#r1:checked ~ .elements > .nameMems {
+    transform: translate(0, 0);
+}
+
+#r2:checked ~ .elements > .string .nameMems {
+    transform: translate(0, -100%);
+}
+
+#r3:checked ~ .elements > .string .nameMems {
+    transform: translate(0, -200%);
+}
+
+#r4:checked ~ .elements > .string .nameMems {
+    transform: translate(0, -300%);
+}
+
+
+
+
+#r1:checked ~ .memsSlider > .slide img {
+    transform: translate(0);
+}
+
+#r2:checked ~ .memsSlider > .slide img {
+    transform: translate(-100%);
+}
+
+#r3:checked ~ .memsSlider > .slide img {
+    transform: translate(-200%);
+}
+
+#r4:checked ~ .memsSlider> .slide img {
+    transform: translate(-300%);
+}
