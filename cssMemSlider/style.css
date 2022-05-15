@@ -18,16 +18,42 @@ body {
     align-items: center;
 }
 
-.slider {
+input {
+    display: none;
+}
+
+.memsSlider {
+    width: inherit;
+    height: 60vh;
+    border: solid 2px rgb(168, 7, 7);
+}
+
+/* .slider {
     border: solid 1px rgb(158, 50, 50);
     width: 40vw;
     height: 60vh;
-}
+    display: flex;
+} */
 
-.row {
+/* .row {
     width: 40vw;
     height: 20vh;
     border: solid 2px rgb(87, 168, 32);
+    display: flex;
+    justify-content: space-between;
+} */
+
+.elements {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+.string {
+    display: flex;
+    border: solid 1px rgb(223, 226, 21);
+    width: 3.2rem;
+    overflow: hidden;
 }
 
 .control {
@@ -41,4 +67,13 @@ body {
     height: 1rem;
     border: solid 2px rgb(56, 22, 207);
     border-radius: 50%;
+    cursor: pointer;
 }
+
+#r1:checked ~ .elements > .control label:nth-of-type(1),
+#r2:checked ~ .elements > .control label:nth-of-type(2),
+#r3:checked ~ .elements > .control label:nth-of-type(3),
+#r4:checked ~ .elements > .control label:nth-of-type(4) {
+    background: rgb(80, 88, 201);
+}
+
