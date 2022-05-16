@@ -43,7 +43,6 @@ img {
     width: inherit;
     height: inherit;
     border-radius: 5%;
-     /* object-fit: scale-down;  */
 }
 
 .elements {
@@ -151,4 +150,42 @@ img {
 #r4:checked ~ .memsSlider> .slide {
     transform: translate(-300%);
     transition: all 0.8s linear ;
+}
+
+
+
+@media (max-width: 1070px) {
+
+    .wrapper {
+        width: 80vw;
+    }
+
+    .memsSlider {
+        height: 45vh;
+    }
+
+    .btn {
+        padding: 0.5rem 0.2rem;
+    }
+
+    .elements {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2.5vh;
+        height: inherit;
+        justify-content: start;
+    }
+    .string {
+        align-self: flex-start;
+       height: 20vh;
+       width: 40vw;
+       
+    }
+
+    .nameMems {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        word-spacing: 0.1rem;
+        height: 8rem;
+    }
 }
