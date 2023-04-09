@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+    background: rgb(8 8 8);
+}
+
+.wrapper {
+    height: 80vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5vh;
+    overflow: hidden;
+    background: rgb(44 41 90);
+    box-shadow: rgb(44 41 90) 0rem 0rem 0rem 0.4rem;
+    border-radius: 2rem;
+}
+
+input {
+    display: none;
+}
+
+.memsSlider {
+    width: inherit;
+    height: 60vh;
+    display: flex;
+    background: #000;
+}
+
+.slide {
+    width: inherit;
+    height: inherit;
+}
+
+img {
+    width: inherit;
+    height: inherit;
+    border-radius: 5%;
+}
+
+.elements {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(77 86 77);
+    border-radius: 0.5rem;
+}
+
+.string {
+    display: flex;
+    display: inline-block;
+    height: 1.9rem;
+    width: auto;
+    overflow: hidden;
+    border: solid 0.15rem #881e1c;
+    background: #000;
+    padding: 0 0.5rem 0 0;
+}
+
+.nameMems {
+    font-size: 1.2rem;
+    color: #50e30d;
+}
+
+
+.control {
+    display: flex;
+    justify-content: space-between;
+    width: 7rem;
+    padding: 0.3rem;
+}
+
+ .btn {
+    padding: 1rem 0.2rem;
+    cursor: pointer;
+} 
+
+.button {
+    width: 1rem;
+    height: 1rem;
+    border: solid 0.15rem rgb(130 30 30);
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0rem 0.11rem 0rem 0.1rem #000;
+}
+
+.btn:hover .button {
+    background: #48fa02;
+}
+
+.btn:active .button {
+    background: #1773a0;
+}
+
+
+
+#r1:checked ~ .elements > .control > label:nth-of-type(1) .button,
+#r2:checked ~ .elements > .control > label:nth-of-type(2) .button,
+#r3:checked ~ .elements > .control > label:nth-of-type(3) .button,
+#r4:checked ~ .elements > .control > label:nth-of-type(4) .button {
+    background: rgb(255, 0, 0);;
+}
+
+#r1:checked ~ .elements > .string .nameMems {
+    transform: translate(0, 0);
+    transition: all 0.5s linear ;
+}
+
+#r2:checked ~ .elements > .string .nameMems {
+    transform: translate(0, -100%);
+    transition: all 0.5s linear ;
+}
+
+#r3:checked ~ .elements > .string .nameMems {
+    transform: translate(0, -200%);
+    transition: all 0.5s linear ;
+}
+
+#r4:checked ~ .elements > .string .nameMems {
+    transform: translate(0, -300%);
+    transition: all 0.5s linear;
+}
+
+
+
+
+#r1:checked ~ .memsSlider > .slide {
+    transform: translate(0);
+    transition: all 0.8s linear;
+}
+
+#r2:checked ~ .memsSlider > .slide {
+    transform: translate(-100%);
+    transition: all 0.8s linear;
+}
+
+#r3:checked ~ .memsSlider > .slide {
+    transform: translate(-200%);
+    transition: all 0.8s linear;
+}
+
+#r4:checked ~ .memsSlider> .slide {
+    transform: translate(-300%);
+    transition: all 0.8s linear ;
+}
+
+
+
+@media (max-width: 1070px) {
+
+    .wrapper {
+        width: 80vw;
+    }
+
+    .memsSlider {
+        height: 45vh;
+    }
+
+    .btn {
+        padding: 0.5rem 0.2rem;
+    }
+
+    .elements {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2.5vh;
+        height: inherit;
+        justify-content: start;
+    }
+    .string {
+        align-self: flex-start;
+       height: 20vh;
+       width: 40vw;
+       
+    }
+
+    .nameMems {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        word-spacing: 0.1rem;
+        height: 8rem;
+    }
+}
